@@ -39,16 +39,11 @@ public class Dashboard {
 				"//a[@class='MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button']"))
 				.click();
 		Thread.sleep(5000);
-		
+
 		// Click Again Puthipul Admin for hide menu
 		driver.findElement(By.xpath("//div[@class='MuiPopover-root']//div[1]")).click();
 		Thread.sleep(5000);
-		
-		// Come Back to Dashboard again
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div/div/div/div[2]/ul[1]/ul/li/a/span[1]/span")).click();
-		Thread.sleep(20000);
-		
-		
+
 		// get title in Lead Engine
 		String AccountPage = driver.getTitle();
 		Thread.sleep(5000);
@@ -58,7 +53,12 @@ public class Dashboard {
 			System.out.println("Can't Go to the Account Settings Screen");
 		}
 		Thread.sleep(15000);
-		
+
+		// Come Back to Dashboard again
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div/div/div/div[2]/ul[1]/ul/li/a/span[1]/span"))
+				.click();
+		Thread.sleep(20000);
+
 		// Come Back to Dashboard again
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[1]/div/div/div/div[2]/ul[1]/ul/li/a/span[1]/span"))
 				.click();
@@ -192,9 +192,23 @@ public class Dashboard {
 //		Thread.sleep(20000);
 		// -----------------------------------------------
 
+		// Click Puthipul Admin
+		driver.findElement(By.xpath("//*[@id=\"root\"]/div/header/div/div[2]/button/h6")).click();
+		Thread.sleep(1000);
 		// Click Logout Button
-		driver.findElement(By.xpath("//li[@class='MuiButtonBase-root MuiListItem-root MuiMenuItem-root MuiMenuItem-gutters MuiListItem-gutters MuiListItem-button']")).click();
-	
+		driver.findElement(By.xpath("//text()[.='Logout']/ancestor::li[1]")).click();
+		Thread.sleep(5000);
+		
+		// get title in Login Screen
+		String LoginScreen = driver.getTitle();
+		System.out.println(LoginScreen);
+		Thread.sleep(5000);
+		if (LoginScreen.equals("Login")) {
+			System.out.println("Correctly Go to the LogIn Screen After Press Logout");
+		} else {
+			System.out.println("Can't Go to the LogIn Screen After Press Logout");
+		}
+
 		Thread.sleep(10000);
 		// Close the Browser
 		driver.close();
