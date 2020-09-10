@@ -14,7 +14,6 @@ public class ActiveUserList {
 		BaseClass BaseClass = new BaseClass();
 		WebDriver driver = BaseClass.BaseFunction();
 		
-		Thread.sleep(20000);
 		
 		// Click UserManagement
 		driver.findElement(By.xpath("//span[contains(text(),'User Management')]")).click();
@@ -65,6 +64,27 @@ public class ActiveUserList {
 			System.out.println("You are in Wrong Page");
 		}
 		Thread.sleep(5000);
+		
+		
+		//Automate Search Box Give to Value For Search box and compare it
+		WebElement searchBox = driver.findElement(By.xpath(
+				"//input[@type='text'][@placeholder='Search customers']"));searchBox.sendKeys("768352207");Thread.sleep(15000);
+
+		Thread.sleep(5000);
+		WebElement cellIneedSearch1 = driver.findElement(
+				By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[1]/table/tbody/tr/td[2]/div"));
+		String valueIneedSearch1 = cellIneedSearch1.getText();Thread.sleep(5000);
+
+		System.out.println(valueIneedSearch1);
+
+		if(valueIneedSearch1.equals("+94768352207"))
+		{
+					System.out.println("Searching Success");
+				}else
+		{
+			System.out.println("Searching Unsuccess");
+		}
+		
 		//Press Edit button and go to the Edit user Page
 		driver.findElement(By.xpath("//tr[1]//td[6]//button[1]//span[1]//*[local-name()='svg']")).click();
 		Thread.sleep(15000);
@@ -79,7 +99,7 @@ public class ActiveUserList {
 		}
 		Thread.sleep(10000);
 
-		//----------------------------------------------
+		
 		//Get Input field Value
 		WebElement inputBox = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[1]/div[1]/div/div/input"));
 		String textInsideInputBox = inputBox.getAttribute("value");

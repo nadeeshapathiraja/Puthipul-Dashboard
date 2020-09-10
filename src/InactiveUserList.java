@@ -37,7 +37,7 @@ public class InactiveUserList {
 		// Confirm Phone verify is true
 		WebElement baseTable = driver.findElement(By.tagName("table"));
 
-		// To find third row of table and its 4th Column
+		// To find 3rd row of table and its 4th Column
 		WebElement tableRow3 = baseTable.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[1]/table/tbody/tr[3]"));
 		Thread.sleep(5000);
 		WebElement cellIneed3 = tableRow3.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[1]/table/tbody/tr[3]/td[4]"));

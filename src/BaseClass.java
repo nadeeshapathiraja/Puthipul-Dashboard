@@ -25,8 +25,9 @@ public class BaseClass {
 
 		// Clicking on the login button to login to the application
 		driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[1]/div[3]/form/div[3]/button/span[1]")).click();
-		
+		Thread.sleep(50000);
 		return driver;
+		
 		
 		
 	}
