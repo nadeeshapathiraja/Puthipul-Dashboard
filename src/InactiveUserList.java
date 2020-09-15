@@ -14,7 +14,6 @@ public class InactiveUserList {
 		BaseClass BaseClass = new BaseClass();
 		WebDriver driver = BaseClass.BaseFunction();
 		
-		Thread.sleep(20000);
 		
 		// Click UserManagement
 		driver.findElement(By.xpath("//span[contains(text(),'User Management')]")).click();
@@ -79,7 +78,8 @@ public class InactiveUserList {
 		}
 		Thread.sleep(10000);
 
-		//----------------------------------------------
+		//##################################Can't Check###############################################
+		
 		//Get Input field Value
 		WebElement inputBox = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/div/div/div/div/div[2]/div/div/div/div/div[1]/div[1]/div/div/input"));
 		String textInsideInputBox = inputBox.getAttribute("value");
@@ -265,6 +265,7 @@ public class InactiveUserList {
 		Thread.sleep(10000);
 		// Close the Browser  
 		driver.close();
+		System.out.println("Success Your Project");
 	}
 	
 }

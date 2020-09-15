@@ -1,11 +1,9 @@
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ActiveUserList {
 
@@ -285,6 +283,7 @@ public class ActiveUserList {
 		Thread.sleep(10000);
 		// Close the Browser  
 		driver.close();
+		System.out.println("Success Your Project");
 	}
 	
 }
